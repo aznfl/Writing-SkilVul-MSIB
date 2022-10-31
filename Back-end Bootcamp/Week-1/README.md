@@ -87,3 +87,50 @@ http.createServer(function(req, res) {
 
 ## **Express Js**
 ___
+> **Express Js** ialah salah satu package NodeJS yang memungkinkan kita untuk membuat HTTP REST API ataupun aplikasi web dengan mudah.
+
+Cara Penginstalan :
+```javascript
+npx express-generator 'nama folder project'
+npm install
+```
+
+untuk menjalankan :
+```javascript
+npm start
+//Lalu buka browser dan ketikkan `http://localhost:3000`
+```
+
+> Adapun beberapa method yang bisa digunakan, dan dapat melihatnya di  Express Documentation melalui `https://expressjs.com/en/api.html`
+
+Berikut salah satu penggunaan method `app.listen() ` yang berfungsi untuk mengembalikan objek http.Server :
+```javascript
+var express = require('express')
+var https = require('https')
+var http = require('http')
+var app = express()
+
+http.createServer(app).listen(80)
+https.createServer(options, app).listen(443)
+```
+
+## **Design Database with MySQL**
+___
+ 
+- Sebelum membuat database langsung ke SQL, alangkah lebih baik kita membuat class diagram dahalu dari data yang ingin kita buat
+- Pertama yaitu membuat beberapa table sesuai dengan data yang kita butuhkan
+- Kemudian membuat colom dari masing-masing tabel beserta data type-nya
+- Di setiap table wajib memiliki Primary Key
+- Lalu membuat relasi antar table
+
+Relasi yang ada di database :
+- One to One
+- One to Many
+- Many to Many
+
+> Dari relasi table one to many, kita bisa membuat sebuah table conjunction sebagai perantara dari kedua table tersebut, agar bisa menjadi many to many
+
+> Contohnya : Jika sebuah table siswa dan film, awalnya satu siswa bisa menyukai berbagai film, agar satu film juga bisa di sukai banyak siswa, maka kita harus membuat table conjunction yang berisikan foreign key dari primary key masing-masing table.
+>
+> Maka dari table siswa ke table conjunction relasinya One to Many, begitu juga dari table film ke conjunction memiliki relasi One to Many.
+
